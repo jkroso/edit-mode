@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Inline Edit</title>
+    <meta name="author" content="Adam Sanderson">
+    <style type="text/css" media="screen">
+      body {
+        padding: 20px;
+        font-family: sans-serif;
+        background: white;
+      }
+
+      :focus {
+        outline: none;
+      }
+      
+      footer {
+        position: fixed;
+        bottom: 20px;
+        background: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id='header'>Edit Mode Component</h1>
+    <p id='content'>
+      Click here to edit. Events will be logged to the console.
+    </p>
+    <script src="../build/build.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+      var editMode = require('edit-mode');
+      var events = require('component-event');
+      
+      events.bind(header, 'click', editTarget)
+      events.bind(content, 'click', editTarget)
+
+      function editTarget(e){
+        editMode(e.target)
+        e.preventDefault()
+      }
+      
+      events.bind(document, 'edit', function(e){
+        console.log(e.type)
+      });      
+
+      events.bind(document, 'change', function(event){
+        console.log(e.type)
+        console.log('  before: %s', event.before);
+        console.log('  after: %s', event.after);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "name": "edit-mode",
+  "version": "0.0.0",
+  "dependencies": {
+    "event": "git://github.com/jkroso/event",
+    "dom-event": "https://github.com/jkroso/dom-event/tarball/0.3.0"
+  }
+}

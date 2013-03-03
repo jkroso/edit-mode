@@ -1,0 +1,19 @@
+{
+  "name": "edit-mode",
+  "repo": "jkroso/edit-mode",
+  "description": "Simple inline editing",
+  "version": "0.0.0",
+  "keywords": [
+    "dom",
+    "edit",
+    "inline",
+    "form"
+  ],
+  "dependencies": {
+    "component/event": "*",
+    "jkroso/dom-event": "*"
+  },
+  "scripts": [
+    "index.js"
+  ]
+}
